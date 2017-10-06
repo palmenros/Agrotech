@@ -95,3 +95,63 @@ main nav h1 {
 main {
     padding: 0 25px;
 }
+
+.card {
+	display: inline-flex;
+	background: #fdfdfd; 
+	border-radius: 3px;
+	flex-direction: column;
+	padding: 20px;
+	width: 250px;
+	box-shadow: 0 3px 5px rgba(0, 0, 0, 0.15); 
+	margin-top: 20px;
+}
+
+.card .sensor {
+	display: flex;
+	justify-content: space-between;
+}
+
+.sensor .heading {
+	font-weight: lighter;
+	font-size: 15px;
+	color: #777;
+	text-align: center;
+}
+
+.sensor .value {
+	font-size: 25px;
+}
+
+.control {
+	padding-top: 20px;
+	position: relative;
+}
+
+.control::before {
+	position: absolute;
+	content: '';
+	left: 0;
+	right: 0;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+	top: 10px;
+}
+
+.icon {
+	width: 80px;
+	height: 80px;
+	/*background: #ffeb3b;*/
+	background: #fea21f;
+	border-radius: 4px;
+	margin-top: -40px;
+	box-shadow: 0 3px 5px rgba(0, 0, 0, 0.15);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.icon i {
+	font-size: 50px;
+	color: white;
+}
