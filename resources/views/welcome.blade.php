@@ -11,20 +11,20 @@
     <link rel="shortcut icon" href="/img/favicon.ico">
 
     <!-- Fonts -->
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <!-- Icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
           rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
-	
-	<div class="wrapper">
-		<aside class="sidebar">
-			<h1>Agrotech</h1>
+    
+    <div class="wrapper">
+        <aside class="sidebar">
+            <h1>Agrotech</h1>
             <input type="checkbox" id="menu-checkbox">
 
             <label for="menu-checkbox" class="menu-btn"><i class="material-icons">menu</i></label>
@@ -35,7 +35,7 @@
                 <a href="#"><i class="material-icons">settings</i> Ajustes</a>
             </nav>
         </aside>
-		<main>
+        <main>
             <nav>
                 <h1>Panel de control</h1>
             </nav>
@@ -171,8 +171,8 @@
             src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
             integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g="
             crossorigin="anonymous"></script>
-    <script src="js/ui.js"></script>
-    <script src="js/app.js"></script>
+    <script src="/js/ui.js"></script>
+    <script src="/js/app.js"></script>
 
 </body>
 </html>
