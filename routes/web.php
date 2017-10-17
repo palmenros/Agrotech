@@ -5,9 +5,9 @@ Route::get('/', function () {
 });
 
 Route::get('/statistics', function () {
-    return view('control');
+    return view('statistics');
 });
 
 Route::get('/settings', function () {
-    return view('control');
+    return view('settings');
 });
