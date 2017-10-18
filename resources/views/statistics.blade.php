@@ -3,6 +3,7 @@
 
 @section('content')
 
+
 @endsection
 
 @section('footer')

@@ -8,7 +8,7 @@ $(function () {
             $('body').css('user-select', 'none');
         });
 
-        button.on('mouseup', function(){
+        button.on('mouseUp', function(){
             $('body').css('user-select', 'initial');
         });
     }
@@ -27,7 +27,7 @@ $(function () {
             $('body').css('user-select', 'none');
 
             let handlers = {
-                touchmove: function(e) {
+                touchMove: function(e) {
                     let sliderOffset = slider.offset().left;
                     let sliderNewWidth = e.originalEvent.touches[0].pageX - sliderOffset;
 
@@ -36,11 +36,11 @@ $(function () {
                     moveSlider(slider, newValue);
 
                 },
-                touchend: function(e) {
+                touchEnd: function(e) {
                     $('body').css('user-select', 'initial');
                     $(document).off(handlers);
                 },
-                touchcancel: function(e) {
+                touchCancel: function(e) {
                     $('body').css('user-select', 'initial');
                     $(document).off(handlers);
                 }
@@ -63,7 +63,7 @@ $(function () {
             $('body').css('user-select', 'none');
 
             let handlers = {
-                mousemove: function(e) {
+                mouseMove: function(e) {
 
                     let sliderOffset = slider.offset().left;
                     let sliderNewWidth = e.pageX - sliderOffset;
@@ -73,7 +73,7 @@ $(function () {
                     moveSlider(slider, newValue);
 
                 },
-                mouseup: function(e) {
+                mouseUp: function(e) {
                     $('body').css('user-select', 'initial');
                     $(document).off(handlers);
                 }

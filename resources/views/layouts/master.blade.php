@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
    
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/app.css">
 </head>
 <body>
 
@@ -30,11 +30,17 @@
             <h1>@yield('title')</h1>
         </nav>
 
-        @yield('content')
+        <div id="app">
+            @yield('content')
+        </div>
     </main>
 </div>
 
 @yield('footer')
+
+<script src="/js/manifest.js"></script>
+<script src="/js/vendor.js"></script>
+<script src="/js/app.js"></script>
 
 </body>
 </html>

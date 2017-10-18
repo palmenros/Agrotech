@@ -15,16 +15,11 @@
                     <span class="value">100%</span>
                 </div>
             </div>
-            <div class="control">
-                @component('inc.automatic-switch')
-                    bulb
-                @endcomponent
-                <br>
-                @component('inc.slider')
-                    @slot('id', 'bulb-brightness')
-                    Brillo:
-                @endcomponent
-            </div>
+
+            <automatic-control switch-id="bulb" slider-id="bulb-brightness">
+                Brillo:
+            </automatic-control>
+
         </div>
 
         <div class="card lift-up">
@@ -39,17 +34,10 @@
                 </div>
             </div>
 
-            <div class="control">
-                @component('inc.automatic-switch')
-                    temperature
-                @endcomponent
+            <automatic-control switch-id="temperature" slider-id="temperature-power">
+                Ventilación:
+            </automatic-control>
 
-                <br>
-                @component('inc.slider')
-                    @slot('id', 'temperature-power')
-                    Ventilación:
-                @endcomponent
-            </div>
         </div>
         <div class="card">
             <div class="sensor">
@@ -62,13 +50,9 @@
                 </div>
             </div>
             <div class="control">
-                @component('inc.automatic-switch')
-                    food
-                @endcomponent
+                <toggle-switch id="food"></toggle-switch>
                 <br>
-                @component('inc.button')
-                    Rellenar
-                @endcomponent
+                <refill-button>Rellenar</refill-button>
             </div>
         </div>
         <div class="card lift-up">
@@ -82,13 +66,9 @@
                 </div>
             </div>
             <div class="control">
-                @component('inc.automatic-switch')
-                    water
-                @endcomponent
+                <toggle-switch id="water"></toggle-switch>
                 <br>
-                @component('inc.button')
-                    Rellenar
-                @endcomponent
+                <refill-button>Rellenar</refill-button>
             </div>
         </div>
         <div class="card">
@@ -102,13 +82,9 @@
                 </div>
             </div>
             <div class="control">
-                @component('inc.automatic-switch')
-                    waste
-                @endcomponent
+                <toggle-switch id="text"></toggle-switch>
                 <br>
-                @component('inc.button')
-                    Rellenar
-                @endcomponent
+                <refill-button>Rellenar</refill-button>
             </div>
         </div>
 
@@ -117,10 +93,5 @@
 @endsection
 
 @section('footer')
-    <script
-            src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-            integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g="
-            crossorigin="anonymous"></script>
-    <script src="/js/ui.js"></script>
-    <script src="/js/app.js"></script>
+
 @endsection
