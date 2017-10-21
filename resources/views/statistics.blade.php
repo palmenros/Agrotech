@@ -3,7 +3,10 @@
 
 @section('content')
 
-	<div class="statistics-container">
+
+    <time-selector></time-selector>
+
+    <div class="statistics-container">
 		<div class="statistics-card temperature">
 			<line-chart chart-data='{!! $temperatureData !!}'></line-chart>
 		</div>

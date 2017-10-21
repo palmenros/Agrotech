@@ -19,10 +19,11 @@ import RefillButton from './components/RefillButton.vue';
 import AutomaticControl from './components/AutomaticControl.vue';
 import LineChart from './components/LineChart.vue';
 import Flash from './components/Flash.vue';
+import TimeSelector from './components/TimeSelector.vue';
 
 const app = new Vue({
     el: '#app',
-    components: { Slider, ToggleSwitch, RefillButton, AutomaticControl, LineChart, Flash }
+    components: { Slider, ToggleSwitch, RefillButton, AutomaticControl, LineChart, Flash, TimeSelector }
 });
 
 //Set axios send X-Requested-With header

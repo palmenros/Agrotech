@@ -22,7 +22,7 @@
 			<input type="text" placeholder="Código Postal">
 		</div>
 
-		<textarea class="customized-data" name="" id="" cols="30" rows="10" placeholder="Correo personalizado.Use este espacia para especificar datos."></textarea>
+		<textarea class="customized-data" name="" id="" cols="30" rows="10" placeholder="Correo personalizado. Use este espacio para especificar datos."></textarea>
 		
 		<div class="form-group button">
 			<button class="btn">Enviar</button>

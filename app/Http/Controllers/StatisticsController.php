@@ -6,8 +6,12 @@ use Illuminate\Http\Request;
 
 class StatisticsController extends Controller
 {
-    public function index()
+
+    protected $time;
+
+    public function index($time = 'year')
     {
+        $this->time = $time;
         return view('statistics', [
             'waterData' => $this->getWaterChart(),
             'temperatureData' => $this->getTemperatureChart(),
@@ -19,9 +23,9 @@ class StatisticsController extends Controller
 
     public function getWasteChart()
     {
-         return $this->getMonthChart(
+         return $this->getChart(
             '%',
-            [28, 48, 40, 19, 86, 90, 28, 48, 40, 19, 86, 90],
+            'waste',
             $this->getColors(
                 'rgba(0, 0, 0, 0)', //backgroundColor
                 '#7b1fa2',                  //borderColor
@@ -35,9 +39,9 @@ class StatisticsController extends Controller
 
     public function getBrightnessChart()
     {
-         return $this->getMonthChart(
+         return $this->getChart(
             '%',
-            [28, 48, 40, 19, 86, 90, 28, 48, 40, 19, 86, 90],
+            'brightness',
             $this->getColors(
                 'rgba(255, 255, 90, 0.4)', //backgroundColor
                 '#ffea00',                  //borderColor
@@ -51,9 +55,9 @@ class StatisticsController extends Controller
 
     public function getFoodChart()
     {
-         return $this->getMonthChart(
+         return $this->getChart(
             'Gramos',
-            [28, 48, 40, 19, 86, 90, 28, 48, 40, 19, 86, 90],
+            'food',
             $this->getColors(
                 'rgba(255, 177, 193, 0.4)', //backgroundColor
                 '#ff6b8a',                  //borderColor
@@ -67,9 +71,9 @@ class StatisticsController extends Controller
 
     public function getTemperatureChart()
     {
-         return $this->getMonthChart(
+         return $this->getChart(
             'ºC',
-            [28, 48, 40, 19, 86, 90, 28, 48, 40, 19, 86, 90],
+           'temperature',
             $this->getColors(
                 'rgba(255, 245, 204, 0.4)', //backgroundColor
                 '#ffcc00',                  //borderColor
@@ -83,9 +87,9 @@ class StatisticsController extends Controller
 
     public function getWaterChart()
     {
-         return $this->getMonthChart(
+         return $this->getChart(
             'Litros',
-            [28, 48, 40, 19, 86, 90, 28, 48, 40, 19, 86, 90],
+            'water',
             $this->getColors(
                 'rgba(151,187,205,0.2)',
                 'rgba(151,187,205,1)',
@@ -97,19 +101,34 @@ class StatisticsController extends Controller
         );
     }
 
-    protected function getMonthLabels()
+    protected function getYearLabels()
     {
         return [ "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Noviembre", "Diciembre" ];
     }
 
-    protected function getMonthChart($label, $data, $colors)
+    public function getMonthLabels()
+    {
+        return range(1, intval(date('t')));
+    }
+
+    public function getYearData($field)
+    {
+        return [28, 48, 40, 45, 86, 90, 28, 48, 40, 19, 86, 90];
+    }
+
+    public function getMonthData($field)
+    {
+        return [79, 71, 73, 75, 70, 74, 73, 77, 74, 76, 70, 76, 74, 73, 78, 71, 77, 77, 73, 74, 74, 80, 73, 78, 72, 71, 80, 70, 79, 73, 75];
+    }
+
+    protected function getChart($label, $data, $colors)
     {
         $array = [
-            'labels' => $this->getMonthLabels(),
+            'labels' => $this->time == 'month' ?  $this->getMonthLabels() : $this->getYearLabels(),
             'datasets' => [
                 [
                     'label' => $label,
-                    'data' => $data,
+                    'data' => $this->time == 'month' ? $this->getMonthData($data) : $this->getYearData($data),
                     'pointRadius' => 4
                 ]
             ]
