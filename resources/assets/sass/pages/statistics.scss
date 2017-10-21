@@ -1,0 +1,63 @@
+.statistics-container {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.statistics-card {
+	position: relative;
+    background: #fdfdfd;
+    border-radius: 3px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.15);
+	padding: 20px;
+	padding-top: 50px;
+	width: calc(50% - 40px);
+	margin: 20px;
+
+	@media(max-width:975px) {
+		width: 100%;		
+	}
+
+}
+
+.statistics-card::before {
+    position: absolute;
+    z-index: 100;
+    background: #f54336;
+    right: 20px;
+    left: 20px;
+    padding: 20px;
+    border-radius: 3px;
+    -webkit-box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+    color: white;
+    top: -15px;
+}
+
+.statistics-card {
+	&.temperature::before {
+		content: 'Temperatura';
+		background: $yellow;
+	}
+
+	&.water::before {
+		content: 'Agua consumida';
+		background: $teal;
+	}
+
+	&.food::before {
+		content: 'Comida ingerida';
+		background: #f54336; 
+	}
+
+	&.brightness::before {
+		content: 'Luz ambiente';
+		background: #ffd523;
+	}
+
+	&.waste::before {
+		content: 'Recolección de purines';
+		background: #7b1fa2;
+	}
+}

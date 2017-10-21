@@ -1,4 +1,4 @@
-t<template>
+<template>
 	<canvas ref="canvas" width="700" height="600"></canvas>
 </template>
 
@@ -29,7 +29,7 @@ t<template>
 				type: 'line',
                 data: this.theChartData,
                 options: {
-                    responsive: false
+                    responsive: true
                 }
 			});
 		}

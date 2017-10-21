@@ -9,14 +9,81 @@ class StatisticsController extends Controller
     public function index()
     {
         return view('statistics', [
-            'waterData' => $this->getWaterChart()
+            'waterData' => $this->getWaterChart(),
+            'temperatureData' => $this->getTemperatureChart(),
+            'foodData' => $this->getFoodChart(),
+            'brightnessData' => $this->getBrightnessChart(),
+            'wasteData' => $this->getWasteChart()
         ]);
+    }
+
+    public function getWasteChart()
+    {
+         return $this->getMonthChart(
+            '%',
+            [28, 48, 40, 19, 86, 90, 28, 48, 40, 19, 86, 90],
+            $this->getColors(
+                'rgba(0, 0, 0, 0)', //backgroundColor
+                '#7b1fa2',                  //borderColor
+                '#7b1fa2',                  //pointBackgroundColor
+                '#fff',                     //pointBorderColor
+                '#fff',                     //pointHoverBackgroundColor
+                '#7b1fa2'                    //pointHoverBorderColor
+            )
+        );
+    }
+
+    public function getBrightnessChart()
+    {
+         return $this->getMonthChart(
+            '%',
+            [28, 48, 40, 19, 86, 90, 28, 48, 40, 19, 86, 90],
+            $this->getColors(
+                'rgba(255, 255, 90, 0.4)', //backgroundColor
+                '#ffea00',                  //borderColor
+                '#ffea00',                  //pointBackgroundColor
+                '#fff',                     //pointBorderColor
+                '#fff',                     //pointHoverBackgroundColor
+                '#ffea00'                    //pointHoverBorderColor
+            )
+        );
+    }
+
+    public function getFoodChart()
+    {
+         return $this->getMonthChart(
+            'Gramos',
+            [28, 48, 40, 19, 86, 90, 28, 48, 40, 19, 86, 90],
+            $this->getColors(
+                'rgba(255, 177, 193, 0.4)', //backgroundColor
+                '#ff6b8a',                  //borderColor
+                '#ff6b8a',                  //pointBackgroundColor
+                '#fff',                     //pointBorderColor
+                '#fff',                     //pointHoverBackgroundColor
+                '#ff6b8a'                    //pointHoverBorderColor
+            )
+        );
+    }
+
+    public function getTemperatureChart()
+    {
+         return $this->getMonthChart(
+            'ºC',
+            [28, 48, 40, 19, 86, 90, 28, 48, 40, 19, 86, 90],
+            $this->getColors(
+                'rgba(255, 245, 204, 0.4)', //backgroundColor
+                '#ffcc00',                  //borderColor
+                '#ffcc00',                  //pointBackgroundColor
+                '#fff',                     //pointBorderColor
+                '#fff',                     //pointHoverBackgroundColor
+                '#ffcc00'                    //pointHoverBorderColor
+            )
+        );
     }
 
     public function getWaterChart()
     {
-        //"pointBackgroundColor": "rgba(151,187,205,1)", "pointBorderColor": "#fff", "pointHoverBackgroundColor": "#fff", "pointHoverBorderColor": "rgba(151,187,205,1)"
-        return $this->getMonthChart(
+         return $this->getMonthChart(
             'Litros',
             [28, 48, 40, 19, 86, 90, 28, 48, 40, 19, 86, 90],
             $this->getColors(

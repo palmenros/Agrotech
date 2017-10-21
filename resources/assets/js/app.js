@@ -7,15 +7,22 @@ window.Vue = Vue;
 window.axios = axios;
 window.Chart = Chart;
 
+let events = new Vue();
+window.events = events;
+window.flash = function(message, type = null) {
+	window.events.$emit('flash', message, type);
+};
+
 import Slider from './components/Slider.vue';
 import ToggleSwitch from './components/ToggleSwitch.vue';
 import RefillButton from './components/RefillButton.vue';
 import AutomaticControl from './components/AutomaticControl.vue';
 import LineChart from './components/LineChart.vue';
+import Flash from './components/Flash.vue';
 
 const app = new Vue({
     el: '#app',
-    components: { Slider, ToggleSwitch, RefillButton, AutomaticControl, LineChart}
+    components: { Slider, ToggleSwitch, RefillButton, AutomaticControl, LineChart, Flash }
 });
 
 //Set axios send X-Requested-With header

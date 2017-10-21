@@ -32,6 +32,7 @@
 
         <div id="app">
             @yield('content')
+            <flash></flash>
         </div>
     </main>
 </div>
