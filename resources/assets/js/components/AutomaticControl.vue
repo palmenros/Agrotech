@@ -2,7 +2,7 @@
     <div class="control">
     <toggle-switch :id="switchId" v-model="sliderDisabled"></toggle-switch>
     <br>
-    <slider id="sliderId" :disabled="sliderDisabled">
+    <slider :id="sliderId" :disabled="sliderDisabled">
         <slot></slot>
     </slider>
     </div>
