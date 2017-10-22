@@ -43,7 +43,7 @@
             },
 
             moveTouch(e) {
-                let offset = this.$refs.slider.getBoundingClientRect().x;
+                let offset = this.$refs.slider.getBoundingClientRect().left;
                 let newWidth = e.touches[0].pageX - offset;
 
                 this.percentage = 100 * newWidth / this.$refs.slider.offsetWidth;
@@ -75,7 +75,7 @@
                 document.addEventListener('mouseup', this.mouseUp);
             },
             move(e){
-                let offset = this.$refs.slider.getBoundingClientRect().x;
+                let offset = this.$refs.slider.getBoundingClientRect().left;
                 let newWidth = e.pageX - offset;
 
                 this.percentage = 100 * newWidth / this.$refs.slider.offsetWidth;
@@ -87,11 +87,12 @@
                 document.body.style.userSelect = 'initial';
             },
             moveToClick(e) {
+
                 if(e.button === 2 || this.disabled) {
                     return false;
                 }
 
-                let offset = this.$refs.slider.getBoundingClientRect().x;
+                let offset = this.$refs.slider.getBoundingClientRect().left;
                 let newWidth = e.pageX - offset;
 
                 this.percentage = 100 * newWidth / this.$refs.slider.offsetWidth;

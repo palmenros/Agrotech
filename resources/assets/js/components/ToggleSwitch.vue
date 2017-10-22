@@ -16,9 +16,11 @@
         methods: {
             mouseDown() {
                 document.body.style.userSelect = 'none';
+                document.body.style.msUserSelect = 'none';
             },
             mouseUp() {
                 document.body.style.userSelect = 'initial';
+                document.body.style.msUserSelect = 'initial';
             },
             updateToggleButton() {
                 this.$emit('input', this.$refs.checkbox.checked);
