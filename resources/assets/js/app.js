@@ -2,7 +2,9 @@ import Vue from 'vue';
 import axios from 'axios';
 import Chart from 'chart.js';
 
+import IO from './socket';
 
+window.io = IO;
 window.Vue = Vue;
 window.axios = axios;
 window.Chart = Chart;
