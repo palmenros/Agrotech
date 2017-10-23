@@ -3,8 +3,8 @@
         <label :for="id"> <slot></slot> </label>
         <input class="slider-range" type="range" :id="id" :disabled="disabled">
         <div ref="slider" class="slider" @mousedown="moveToClick($event)" >
-            <div class="slider-fill" :style="fillStyle"></div>
-            <div @touchstart="startMovingTouch($event)" @mousedown="startMoving($event)" class="slider-handle" ref="handle" :style="handleStyle"></div>
+            <div :class="['slider-fill', { 'disabled': disabled }]" :style="fillStyle"></div>
+            <div :class="['slider-handle', { 'disabled': disabled }]" @touchstart="startMovingTouch($event)" @mousedown="startMoving($event)" ref="handle" :style="handleStyle"></div>
         </div>
     </div>
 </template>
@@ -30,6 +30,8 @@
                     return false;
                 }
                 document.body.style.userSelect = 'none';
+                document.body.style.msUserSelect = 'none';
+
 
                 this.touchMove = this.moveTouch.bind(this);
                 document.addEventListener('touchmove', this.touchMove);
@@ -53,12 +55,16 @@
                 document.removeEventListener('touchmove', this.touchMove);
                 document.removeEventListener('touchend', this.touchEnd);
                 document.removeEventListener('touchcancel', this.touchCancel);
+                document.body.style.userSelect = 'initial';
+                document.body.style.msUserSelect = 'initial';
             },
 
             cancelTouch() {
                 document.removeEventListener('touchmove', this.touchMove);
                 document.removeEventListener('touchend', this.touchEnd);
                 document.removeEventListener('touchcancel', this.touchCancel);
+                document.body.style.userSelect = 'initial';
+                document.body.style.msUserSelect = 'initial';
             },
 
             startMoving(e){
@@ -67,6 +73,7 @@
                 }
 
                 document.body.style.userSelect = 'none';
+                document.body.style.msUserSelect = 'none';
 
                 this.mouseMove = this.move.bind(this);
                 document.addEventListener('mousemove', this.mouseMove);
@@ -85,7 +92,9 @@
                 document.removeEventListener('mousemove', this.mouseMove);
                 document.removeEventListener('mouseup', this.mouseUp);
                 document.body.style.userSelect = 'initial';
+                document.body.style.msUserSelect = 'initial';
             },
+
             moveToClick(e) {
 
                 if(e.button === 2 || this.disabled) {

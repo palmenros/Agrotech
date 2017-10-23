@@ -4,10 +4,10 @@ import Chart from 'chart.js';
 
 import IO from './socket';
 
-window.io = IO;
 window.Vue = Vue;
 window.axios = axios;
 window.Chart = Chart;
+window.io = IO;
 
 let events = new Vue();
 window.events = events;

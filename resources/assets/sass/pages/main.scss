@@ -326,12 +326,12 @@ main {
   cursor: pointer;
 }
 
-.slider-range:disabled + .slider .slider-handle {
+.slider-handle.disabled {
   background: #b0b0b0;
   cursor: initial;
 }
 
-.slider-range:disabled + .slider .slider-fill {
+.slider-fill.disabled {
   background: #b0b0b0;
 }
 

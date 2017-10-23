@@ -1,4 +1,5 @@
 import socket from 'socket.io-client';
+import Vue from 'vue';
 
 let pathname = document.location.origin + ':3000';
 const io = socket(pathname);
