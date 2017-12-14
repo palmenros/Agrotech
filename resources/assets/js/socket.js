@@ -15,3 +15,7 @@ io.on('variables', data => {
 		}
 	}
 });
+
+IO.$on('emit', (obj) => {
+	io.emit(obj.channel, obj.data);
+});
