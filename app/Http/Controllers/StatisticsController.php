@@ -111,14 +111,37 @@ class StatisticsController extends Controller
         return range(1, intval(date('t')));
     }
 
+    /*TODO: Store statistics in mysql database*/
     public function getYearData($field)
     {
-        return [28, 48, 40, 45, 86, 90, 28, 48, 40, 19, 86, 90];
+        switch($field) {
+            case 'waste':
+                return [19,35,30,2,1,5,15,7,21,30,25,20];
+            case 'brightness':
+                return [19,80,45,48,40,86,86,28,40,48,90,28];
+            case 'food':
+                return [70,40,30,46,40,34,66,38,50,45,28,48];
+            case 'temperature':
+                return [1, 5, 15, 19, 20, 25, 30, 35, 30, 21, 7, 2];
+            case 'water':
+                return [28, 48, 40, 45, 86, 90, 28, 48, 40, 19, 86, 90];
+        }
     }
 
     public function getMonthData($field)
     {
-        return [79, 71, 73, 75, 70, 74, 73, 77, 74, 76, 70, 76, 74, 73, 78, 71, 77, 77, 73, 74, 74, 80, 73, 78, 72, 71, 80, 70, 79, 73, 75];
+        switch($field) {
+            case 'waste':
+                return [79, 71, 73, 75, 70, 74, 73, 77, 74, 76, 70, 76, 74, 73, 78, 71, 77, 77, 73, 74, 74, 80, 73, 78, 72, 71, 80, 70, 79, 73, 75];
+            case 'brightness':
+                return [77,77,70,75,78,73,75,76,70,73,79,77,73,80,71,75,78,73,74,71,74,75,72,74,76,74,74,76,72,79,73];
+            case 'food':
+                return [75,77,74,80,73,75,74,73,70,76,75,78,76,77,79,78,73,74,79,72,70,74,76,71,71,73,75,72,73,74,77];
+            case 'temperature':
+                return [75,74,73,77,75,73,76,72,75,70,78,77,74,76,71,76,78,75,79,72,80,70,71,73,77,73,74,74,74,79,73];
+            case 'water':
+                return [74,73,75,78,76,72,71,79,79,72,77,76,73,74,74,73,77,75,74,80,78,71,70,77,73,75,74,75,70,76,73];
+        }
     }
 
     protected function getChart($label, $data, $colors)
