@@ -84,7 +84,7 @@
             <div class="control">
                 <toggle-switch id="text"></toggle-switch>
                 <br>
-                <refill-button>Vaciar</refill-button>
+                <refill-button actuator-id="8">Vaciar</refill-button>
             </div>
         </div>
 

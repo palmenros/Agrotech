@@ -136,7 +136,7 @@
                 io.$emit('emit', {
                     channel: 'control',
                     data: {
-                        id: this.actuatorId,
+                        actuatorId: this.actuatorId,
                         data: this.percentage,
                         automatic: false
                     }

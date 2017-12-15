@@ -2,7 +2,7 @@
     <div class="control">
     <toggle-switch :id="switchId" v-model="sliderDisabled"></toggle-switch>
     <br>
-    <slider :id="sliderId" :disabled="sliderDisabled" :actuatorId="actuatorIds">
+    <slider :id="sliderId" :disabled="sliderDisabled" :actuatorId="actuatorId">
         <slot></slot>
     </slider>
     </div>
@@ -41,7 +41,7 @@
                 io.$emit('emit', {
                     channel: 'control',
                     data: {
-                        id: this.actuatorId,
+                        actuatorId: this.actuatorId,
                         data: 0,
                         automatic: this.sliderDisabled
                     }

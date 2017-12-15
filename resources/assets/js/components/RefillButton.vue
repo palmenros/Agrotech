@@ -17,7 +17,7 @@
                 io.$emit('emit', {
                     channel: 'control',
                     data: {
-                        id: this.actuatorId,
+                        actuatorId: this.actuatorId,
                         data: 1,
                         automatic: false
                     }
