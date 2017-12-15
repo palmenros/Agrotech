@@ -1,6 +1,6 @@
 <template>
     <div class="form-group">
-        <button class="btn">
+        <button class="btn" @click="send">
             <slot></slot>
         </button>
     </div>
@@ -8,6 +8,21 @@
 
 <script>
     export default {
-        name: 'refill-button'
+        name: 'refill-button',
+        props: {
+            'actuatorId': String
+        },
+        methods: {
+            send() {
+                io.$emit('emit', {
+                    channel: 'control',
+                    data: {
+                        id: this.actuatorId,
+                        data: 1,
+                        automatic: false
+                    }
+                });
+            }
+        }
     }
 </script>

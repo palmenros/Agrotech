@@ -12,11 +12,11 @@
                 </div>
                 <div class="info">
                     <h2 class="heading">Luces</h2>
-                    <span class="value"><arduino-sensor sensor-id="3"></arduino-sensor>%</span>
+                    <span class="value"><arduino-sensor sensor-id="2"></arduino-sensor>%</span>
                 </div>
             </div>
 
-            <automatic-control switch-id="bulb" slider-id="bulb-brightness" send>
+            <automatic-control switch-id="bulb" slider-id="bulb-brightness" actuator-id="0">
                 Brillo:
             </automatic-control>
 
@@ -34,7 +34,7 @@
                 </div>
             </div>
 
-            <automatic-control switch-id="temperature" slider-id="temperature-power">
+            <automatic-control switch-id="temperature" slider-id="temperature-power" actuator-id="1">
                 Ventilación:
             </automatic-control>
 
@@ -46,13 +46,13 @@
                 </div>
                 <div class="info">
                     <h2 class="heading">Comida</h2>
-                    <span class="value">575 g</span>
+                    <span class="value"><arduino-sensor sensor-id="0"></arduino-sensor>g</span>
                 </div>
             </div>
             <div class="control">
                 <toggle-switch id="food"></toggle-switch>
                 <br>
-                <refill-button>Rellenar</refill-button>
+                <refill-button actuator-id="2">Rellenar</refill-button>
             </div>
         </div>
         <div class="card lift-up">
@@ -62,13 +62,13 @@
                 </div>
                 <div class="info">
                     <h2 class="heading">Agua</h2>
-                    <span class="value">670 ml</span>
+                    <span class="value"><arduino-sensor sensor-id="3"></arduino-sensor> %</span>
                 </div>
             </div>
             <div class="control">
                 <toggle-switch id="water"></toggle-switch>
                 <br>
-                <refill-button>Rellenar</refill-button>
+                <refill-button actuator-id="3">Rellenar</refill-button>
             </div>
         </div>
         <div class="card">

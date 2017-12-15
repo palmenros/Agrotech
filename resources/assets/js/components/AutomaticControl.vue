@@ -2,7 +2,7 @@
     <div class="control">
     <toggle-switch :id="switchId" v-model="sliderDisabled"></toggle-switch>
     <br>
-    <slider :id="sliderId" :disabled="sliderDisabled" :send="send">
+    <slider :id="sliderId" :disabled="sliderDisabled" :actuatorId="actuatorIds">
         <slot></slot>
     </slider>
     </div>
@@ -26,13 +26,26 @@
             'switchId' : String,
             'sliderId' : String,
             'disabled' : Boolean,
-            'send' : Boolean
+            'actuatorId' : String
         },
         components: { ToggleSwitch, Slider },
 
         mounted() {
             if(this.disabled) {
                 this.sliderDisabled = this.disabled;
+            }
+        },
+
+        watch: {
+            sliderDisabled() {
+                io.$emit('emit', {
+                    channel: 'control',
+                    data: {
+                        id: this.actuatorId,
+                        data: 0,
+                        automatic: this.sliderDisabled
+                    }
+                });
             }
         }
     };

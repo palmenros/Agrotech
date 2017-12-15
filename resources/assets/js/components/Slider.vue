@@ -111,7 +111,7 @@
         props: {
             'id' : String,
             'disabled' : Boolean,
-            'send' : Boolean
+            'actuatorId' : String
         },
         computed: {
             fillStyle() {
@@ -133,12 +133,14 @@
         },
         watch: {
             percentage() {
-                if(this.send) {
-                    io.$emit('emit', {
-                        channel: 'control',
-                        data: this.percentage
-                    });
-                }
+                io.$emit('emit', {
+                    channel: 'control',
+                    data: {
+                        id: this.actuatorId,
+                        data: this.percentage,
+                        automatic: false
+                    }
+                });
             }
         }
     };
