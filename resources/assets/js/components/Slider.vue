@@ -110,7 +110,8 @@
         },
         props: {
             'id' : String,
-            'disabled' : Boolean
+            'disabled' : Boolean,
+            'send' : Boolean
         },
         computed: {
             fillStyle() {
@@ -129,6 +130,16 @@
         },
         mounted() {
             this.handleWidth = this.$refs.handle.offsetWidth;
+        },
+        watch: {
+            percentage() {
+                if(this.send) {
+                    io.$emit('emit', {
+                        channel: 'control',
+                        data: this.percentage
+                    });
+                }
+            }
         }
     };
 </script>

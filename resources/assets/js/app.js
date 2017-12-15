@@ -22,10 +22,11 @@ import AutomaticControl from './components/AutomaticControl.vue';
 import LineChart from './components/LineChart.vue';
 import Flash from './components/Flash.vue';
 import TimeSelector from './components/TimeSelector.vue';
+import ArduinoSensor from './components/ArduinoSensor.vue';
 
 const app = new Vue({
     el: '#app',
-    components: { Slider, ToggleSwitch, RefillButton, AutomaticControl, LineChart, Flash, TimeSelector }
+    components: { Slider, ToggleSwitch, RefillButton, AutomaticControl, LineChart, Flash, TimeSelector, ArduinoSensor }
 });
 
 //Set axios send X-Requested-With header

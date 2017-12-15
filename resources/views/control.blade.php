@@ -12,11 +12,11 @@
                 </div>
                 <div class="info">
                     <h2 class="heading">Luces</h2>
-                    <span class="value">100%</span>
+                    <span class="value"><arduino-sensor sensor-id="3"></arduino-sensor>%</span>
                 </div>
             </div>
 
-            <automatic-control switch-id="bulb" slider-id="bulb-brightness">
+            <automatic-control switch-id="bulb" slider-id="bulb-brightness" send>
                 Brillo:
             </automatic-control>
 
@@ -30,7 +30,7 @@
                 </div>
                 <div class="info">
                     <h2 class="heading">Temperatura</h2>
-                    <span class="value">25ºC</span>
+                    <span class="value"> <arduino-sensor sensor-id="1"></arduino-sensor> ºC </span>
                 </div>
             </div>
 
@@ -78,7 +78,7 @@
                 </div>
                 <div class="info">
                     <h2 class="heading">Purines</h2>
-                    <span class="value">43%</span>
+                    <span class="value"><arduino-sensor sensor-id="4"></arduino-sensor>%</span>
                 </div>
             </div>
             <div class="control">
