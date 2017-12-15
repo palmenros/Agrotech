@@ -17,7 +17,7 @@
             <input type="text" v-model="postalCode" placeholder="Código Postal">
         </div>
 
-        <textarea class="customized-data" name="" id="" cols="30" rows="10" placeholder="Correo personalizado. Use este espacio para especificar datos."></textarea>
+        <textarea v-model="customText" class="customized-data" name="" id="" cols="30" rows="10" placeholder="Correo personalizado. Use este espacio para especificar datos."></textarea>
 
         <div class="form-group button">
             <button class="btn">Enviar</button>
@@ -38,7 +38,8 @@
                 'address': '',
                 'city': '',
                 'province': '',
-                'postalCode': ''
+                'postalCode': '',
+                'customText': ''
             };
         },
 
@@ -53,7 +54,8 @@
                         'address': this.address,
                         'city': this.city,
                         'province': this.province,
-                        'postalCode': this.postalCode
+                        'postalCode': this.postalCode,
+                        'customText': this.customText
                     }
                 });
             }
